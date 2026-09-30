@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Rigel3D: Rig-aware Latents for Animation-Ready 3D Asset Generation">
+  <meta name="keywords" content="Rigged Asset Generation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rigel3D: Rig-aware Latents for Animation-Ready 3D Asset Generation</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css?v=4">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js?v=2"></script>
+</head>
+<body>
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Rigel3D: Rig-aware Latents for Animation-Ready 3D Asset Generation</h1>
+         <h2 class="title is-3">NeurIPS 2026</h2>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://nchatzis.github.io">Nikitas Chatzis</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://marios2019.github.io">Marios Loizou</a><sup>1,2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://kalo-ai.github.io">Evangelos Kalogerakis</a><sup>1,2,3</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Technical University of Crete,</span>
+            <span class="author-block"><sup>2</sup>CYENS Center of Excellence,</span>
+            <span class="author-block"><sup>3</sup>University of Massachusetts Amherst</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2605.13129"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2605.13129"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/nchatzis/Rigel3D"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (coming soon)</span>
+                </a>
+              </span>
+            </div>
+            <p class="coming-soon">
+              More animated examples, source code and checkpoints coming soon!
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="hero-body teaser-figure">
+  <img src="./static/images/teaser-1.png" alt="teaser for Rigel3D"/>
+</div>
+
+
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+          Recent 3D generative models can synthesize high-quality assets, but their outputs are typically static: they lack the skeletal rigs, joint hierarchies, and skinning weights required for animation. This limits their use in games, film, simulation, virtual agents, and embodied AI, where assets must not only look plausible but also move plausibly. 
+          We introduce <em>Rigel3D</em>, a generative method for animation-ready 3D assets represented as rigged meshes. 
+          Unlike post-hoc auto-rigging methods that attach rigs to completed shapes, our method jointly models geometry and rig structure through coupled surface and skeleton structured latent representations. 
+          A rig-aware autoencoder decodes these representations into mesh geometry, skeleton topology, joint coordinates, and skinning weights, while a two-stage latent generative model synthesizes both surface and skeleton representations for image-conditioned generation. 
+          To support downstream animation workflows, we further introduce an open-vocabulary joint labeling module that embeds generated joints into a shared vision-language space, enabling correspondence to arbitrary retargeting templates. 
+          Experiments on large-scale rigged asset datasets demonstrate that our method generates diverse, high-quality animation-ready assets and outperforms existing rigging baselines across multiple metrics. 
+        </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+
+<section class="section" id="Contributions">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Contributions</h2>
+    <!-- One <li> per reference; copy the template below. Numbering is automatic. -->
+    <ul class="references">
+      <li>
+        We introduce a generative end-to-end framework for animation-ready 3D asset generation that produces meshes, skeletons and skinning weights.
+      </li>
+      <li>
+        A rig-aware autoencoder learns coupled surface and skeleton Structured Latents, which are then used for skeleton-conditioned
+        mesh decoding, skeleton and skinning weight generation.
+      </li>
+      <li>
+        An open-vocabulary joint labeling module matches generated joints to arbitrary text labels in a shared vision-language space,
+        enabling support for downstream animation workflows.
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+<section class="section">
+<div class="container is-max-desktop">
+  <div class="columns is-centered">
+    <div class="column">
+      <h2 class="title is-3">Architecture</h2>
+
+      <div class="figure-switcher">
+        <div class="carousel figure-carousel">
+          <div class="item">
+            <img src="./static/images/autoencoder-1.png" alt="Rig-aware autoencoder overview"/>
+          </div>
+          <div class="item">
+            <img src="./static/images/generator-1.png" alt="Generator overview"/>
+          </div>
+        </div>
+
+        <div class="content has-text-justified">
+        <p class="switcher-caption is-active">
+          <strong>Overview of the rig-aware autoencoder.</strong> 
+          A surface encoder produces <strong>surface</strong> SLats from multiview visual features attached to occupied surface voxels, 
+          while a skeleton encoder produces <strong>skeleton</strong> SLats from rig-aware features attached to voxels intersecting the bones. 
+          The two latent representations are <strong>jointly</strong> decoded into mesh geometry, skeleton structure, and skinning weights.
+        </p>
+        <p class="switcher-caption">
+          <strong>Overview of the generator.</strong>
+          Conditioned on an input image, our generation pipeline yields both surface and skeleton
+          SLats, which then are decoded into mesh geometry, skeleton structure, and skinning weights.
+        </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</section>
+
+
+<section class="section">
+<div class="container is-max-desktop">
+  <div class="columns is-centered">
+    <div class="column">
+      <h2 class="title is-3">Image to Rigged Asset Experiments</h2>
+
+      <div class="figure-switcher">
+        <div class="carousel figure-carousel">
+          <div class="item">
+            <img src="./static/images/anymate_comparison-1.png" alt="Comparison on Anymate"/>
+          </div>
+          <div class="item">
+            <img src="./static/images/articulationxl_comparison-1.png" alt="Comparison on ArticulationXL"/>
+          </div>
+        </div>
+
+        <div class="content has-text-justified">
+        <p class="switcher-caption is-active">
+          <strong>Anymate dataset experiments.</strong>
+          We compare our method to two-stage baselines (TRELLIS + post-hoc auto-rigging). 
+          Rigel3D produces rigs that better match the reference ones in joint placement, connectivity,
+          and skinning while yielding more coherent novel poses. Shapes are shown without texture to
+          emphasize skeleton and pose geometry rather than appearance. Skinning colors indicate bone
+          influence, with smooth transitions corresponding to blended weights. Green insets show input images.
+        </p>
+        <p class="switcher-caption">
+          <strong>ArticulationXL-1k test split experiments.</strong>
+          Here we compare generated shapes, skeletons, skinning, and novel-pose deformations. 
+          Green insets show input images. Under our evaluation protocol, Rigel3D better preserves
+          the articulation structure and produces more coherent skinning weights across diverse assets.
+          Stars highlight issues such as extra generated limbs, incomplete geometry, incorrect skinning weight
+          distribution and spurious joint placement.
+        </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</section>
+
+
+<section class="section">
+<div class="container is-max-desktop">
+  <div class="columns is-centered">
+    <div class="column">
+      <h2 class="title is-3">Skeleton Labeling</h2>
+
+      <figure class="image">
+        <img 
+          src="./static/images/joint_labeling-1.png"
+          alt="pretraining"
+          style="width: 100%; height: auto;"
+        />
+      </figure>
+
+      <div class="content has-text-justified">
+        <p>
+        <strong>Skeleton labeling.</strong>
+         Our labeling model coembeds skeleton geometry and text captions, allowing for label querying and further compatibility
+         with downstream animation pipelines. 
+         At inference time, each generated joint is labeled by nearest-neighbor retrieval over any candidate vocabulary, 
+         including joint names of a retargeting template. 
+         Thus, the learned joint representation is decoupled from the choice of label set, 
+         allowing the same rig to be matched to different animation templates without retraining.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</section>
+
+
+<section class="section">
+<div class="container is-max-desktop">
+  <div class="columns is-centered">
+    <div class="column">
+      <h2 class="title is-3">Retargeting</h2>
+
+      <div class="figure-switcher">
+        <div class="carousel figure-carousel">
+          <div class="item">
+            <div class="retarget-row">
+              <figure>
+                <img src="./static/motion_retargeting/34a6bdfa-1ed9-5c2c-a492-b40aaee69670/34a6bdfa-1ed9-5c2c-a492-b40aaee69670_tpose.png" alt="Generated rigged asset in T-pose"/>
+                <figcaption>Generated Rigged Asset</figcaption>
+              </figure>
+              <figure>
+                <img src="./static/motion_retargeting/34a6bdfa-1ed9-5c2c-a492-b40aaee69670/Silly%20Dancing.gif" alt="Source motion: Silly Dancing"/>
+                <figcaption>Source motion: Silly Dancing</figcaption>
+              </figure>
+              <figure>
+                <video src="./static/motion_retargeting/34a6bdfa-1ed9-5c2c-a492-b40aaee69670/34a6bdfa-1ed9-5c2c-a492-b40aaee69670.mp4" autoplay muted loop playsinline></video>
+                <figcaption>Retargeted animation</figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="item">
+            <div class="retarget-row">
+              <figure>
+                <img src="./static/motion_retargeting/7aad5a7f-b8c9-5e10-b026-4f6aa1467c08/7aad5a7f-b8c9-5e10-b026-4f6aa1467c08_tpose.png" alt="Generated rigged asset in T-pose"/>
+                <figcaption>Generated Rigged Asset</figcaption>
+              </figure>
+              <figure>
+                <img src="./static/motion_retargeting/7aad5a7f-b8c9-5e10-b026-4f6aa1467c08/Dodging%20Right.gif" alt="Source motion: Dodging Right"/>
+                <figcaption>Source motion: Dodging Right</figcaption>
+              </figure>
+              <figure>
+                <video src="./static/motion_retargeting/7aad5a7f-b8c9-5e10-b026-4f6aa1467c08/7aad5a7f-b8c9-5e10-b026-4f6aa1467c08.mp4" autoplay muted loop playsinline></video>
+                <figcaption>Retargeted animation</figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="item">
+            <div class="retarget-row">
+              <figure>
+                <img src="./static/motion_retargeting/7b41ae61-56f2-5e4c-a54a-8915974f57b3/7b41ae61-56f2-5e4c-a54a-8915974f57b3_tpose.png" alt="Generated rigged asset in T-pose"/>
+                <figcaption>Generated Rigged Asset</figcaption>
+              </figure>
+              <figure>
+                <img src="./static/motion_retargeting/7b41ae61-56f2-5e4c-a54a-8915974f57b3/Rumba%20Dancing.gif" alt="Source motion: Rumba Dancing"/>
+                <figcaption>Source motion: Rumba Dancing</figcaption>
+              </figure>
+              <figure>
+                <video src="./static/motion_retargeting/7b41ae61-56f2-5e4c-a54a-8915974f57b3/7b41ae61-56f2-5e4c-a54a-8915974f57b3.mp4" autoplay muted loop playsinline></video>
+                <figcaption>Retargeted animation</figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="item">
+            <div class="retarget-row">
+              <figure>
+                <img src="./static/motion_retargeting/bcfdf2db-f21d-5bf6-a7d3-090db9467023/bcfdf2db-f21d-5bf6-a7d3-090db9467023_tpose.png" alt="Generated rigged asset in T-pose"/>
+                <figcaption>Generated Rigged Asset</figcaption>
+              </figure>
+              <figure>
+                <img src="./static/motion_retargeting/bcfdf2db-f21d-5bf6-a7d3-090db9467023/Hip%20Hop%20Dancing.gif" alt="Source motion: Hip Hop Dancing"/>
+                <figcaption>Source motion: Hip Hop Dancing</figcaption>
+              </figure>
+              <figure>
+                <video src="./static/motion_retargeting/bcfdf2db-f21d-5bf6-a7d3-090db9467023/bcfdf2db-f21d-5bf6-a7d3-090db9467023.mp4" autoplay muted loop playsinline></video>
+                <figcaption>Retargeted animation</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <div class="content has-text-justified">
+        <p>
+          Our generated animation-ready asserts are labeled with our open-vocabulary module given a list of joint labels
+          from a corresponding template. The source motion is then retargeted onto our generated asset. 
+          All animations are sourced from <a href="https://www.mixamo.com/">Adobe Mixamo</a>.
+          **Blender stores multi-child connections as hierarchy links rather than exact head-to-tail bones, 
+          as seen in the hip–spine–leg junctions and the upper spine, neck, and shoulder area. 
+          These links are not drawn in the proxy geometry rig, so some visual segments may appear missing, although the actual rig remains connected and animates correctly.
+        </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</section>
+
+
+<section class="section" id="Limitations">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Limitations</h2>
+    <!-- One <li> per reference; copy the template below. Numbering is automatic. -->
+    <ul class="references">
+      <li>
+        Because skinning is not supervised by long motion sequences, deformations can be less natural under extreme poses or specific animation intents and collapsing or deformation artifacts may occur.
+      </li>
+      <li>
+        Open-vocabulary labels may be ambiguous for repeated and fine-grained structures such as fingers, tails or decorative appendages.
+      </li>
+      <li>
+        Our method can not handle closed-loop kinematic graphs, such as mechanical linkages with cycles or multiple-parent constraints.
+      </li>
+      <li>
+        Our method inherits the limitations of single image 3D generation when input views are ambiguous or contain severe occlusions. 
+        These issues also directly affect the geometry's corresponding skeleton, often resulting in missing joints, spurious branches and imperfect connectivity.
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+<section class="section" id="References">
+  <div class="container is-max-desktop content">
+    <h2 class="title">References</h2>
+    <!-- One <li> per reference; copy the template below. Numbering is automatic. -->
+    <ol class="references">
+      <li>
+        <a href="https://microsoft.github.io/TRELLIS/">Structured 3D Latents for Scalable and Versatile 3D Generation</a>.
+        Xiang, J et al.
+        <em>CVPR</em>, 2025.
+      </li>
+      <li>
+        <a href="https://anymate3d.github.io/">Anymate: A Dataset and Baselines for Learning 3D Object Rigging</a>.
+        Deng, Y. et al.
+        <em>SIGGRAPH</em>, 2025.
+      </li>
+      <li>
+        <a href="https://chaoyuesong.github.io/Puppeteer/">Puppeteer: Rig and Animate Your 3D Models</a>.
+        Song, C. et al.
+        <em>Neurips</em>, 2025 (Spotlight).
+      </li>
+      <li>
+        <a href="https://yihua7.github.io/AniGen_web/">AniGen: Unified S3 Fields for Animatable 3D Asset Generation</a>.
+        Huang, Y-H. et al.
+        <em>SIGGRAPH</em>, 2026.
+      </li>
+    </ol>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{chatzis2026rigel3d,
+      title={Rigel3D: Rig-aware Latents for Animation-Ready 3D Asset Generation}, 
+      author={Nikitas Chatzis and Marios Loizou and Evangelos Kalogerakis},
+      year={2026},
+      eprint={2605.13129},
+      archivePrefix={arXiv},
+      primaryClass={cs.GR},
+      url={https://arxiv.org/abs/2605.13129}, 
+}
+</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Website adapted from the following  <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
